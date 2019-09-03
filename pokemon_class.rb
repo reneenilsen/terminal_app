@@ -32,4 +32,20 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
         end
     end
 
+    def throw_run
+        if @spawn_rate < 30
+            #if we have found a pokemon
+                puts "'THROW' Pokeball or 'RUN'"
+                ball_input_options = gets.chomp
     
+                if ball_input_options == "THROW"
+                    puts "You threw a Pokeball"
+                end
+    
+                if ball_input_options == "RUN"
+                    puts "You ran away"
+                    # need to stop this loop
+                end
+        end
+    end
+
