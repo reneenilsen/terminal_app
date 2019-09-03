@@ -1,40 +1,35 @@
 class Pokemon
-attr_accessor :pokemon_type, :pokemon_level, :spawn, :current_pokemon_level, :current_pokemon_type, :spawn_rate
+attr_accessor :pokemon_type, :pokemon_level, :pokemon_spawn, :current_pokemon_level
+attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_rate
 
     def initialize
         @pokemon_type = ["Pikachu", "Eevee", "Psyduck", "Ekans", "Vulpix", "Squirtle", "Bulbasaur", "Charmander"]
         @pokemon_level = [1, 2, 3, 4, 5]
-       
+        @spawn_rate = rand(1..100)
+        
     end
 
     def spawn_rate
-        @spawn_rate = rand(1..100)
-        puts "Spawn rate number is #{@spawn_rate}" 
-            if @spawn_rate < 30
-                puts "You found a pokemon"
-                @current_pokemon_type = @pokemon_type.sample(1)
-                @current_pokemon_level = @pokemon_level.sample(1)
-                puts "You found a #{@current_pokemon_type}"
-                puts "Its level is #{@current_pokemon_level}"
-            elsif
-                p "There is no Pokemon here"
-            end  
+        puts "Spawn rate number is #{@spawn_rate}" # to be taken out, dont need to see this
     end
 
-    # def spawn
-    #     @current_pokemon_type = @pokemon_type.sample(1)
-    #     @current_pokemon_level = @pokemon_level.sample(1)
-    #     puts "You found a #{@current_pokemon_type}"
-    #     puts "Its level is #{@current_pokemon_level}"
-    # end
-end
+    def found_pokemon
+        if @spawn_rate < 30 # spawn rate at 30%
+            puts "You found a pokemon"
+            @current_pokemon_type = @pokemon_type.sample(1) # ramdomly choose pokemon type from array
+            @current_pokemon_level = @pokemon_level.sample(1) # ramdomly choose pokemon level from array
+            puts "You found a #{@current_pokemon_type}" # prints random pokemon
+            puts "Its level is #{@current_pokemon_level}" # prints ramdom pokemon level
+            @movement = false # make movement false so we cant move
+        end
+    end
 
-# eevee = Pokemon.new("Eevee", 3)
-# ekans = Pokemon.new("Ekans", 1)
-# psyduck = Pokemon.new("Psyduck", 2)
-# vulpix = Pokemon.new("Vulpix", 4)
+    def found_no_pokemon
+        if @spawn_rate > 30 # if spawn rate is above 30%, no pokemon appear
+            p "There is no Pokemon here"
+            # @spawn_rate = rand(1..100) # make new spawn_rate number
+            # puts "The new spawn rate number is #{@spawn_rate}" # to be taken out, dont need to see this
+        end
+    end
 
-# puts psyduck.spawn
-# puts ekans.spawn
-# puts eevee.spawn
-# puts vulpix.spawn
+    
