@@ -49,3 +49,18 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
         end
     end
 
+    def catch_pokemon
+        @catch_rate = rand(1..100) # want to add the pokemons level to this
+        puts "catch rate number is #{@catch_rate}" # to be taken out, dont need to see this
+
+        if catch_rate < 50 # catch or flee rate is 50/50
+            puts "You caught #{@current_pokemon_type}"
+            # return movement to true
+        end
+
+        if catch_rate > 50
+            puts "The #{@current_pokemon_type} fled"
+            return # movement to true
+        end
+    end
+
