@@ -5,7 +5,6 @@ class Player
 
     def initialize
         @movement = true  
-        puts "Lets play!"
     end
 
     def move
@@ -17,6 +16,9 @@ class Player
 
             if input_options == "LEFT"
                 puts "You moved left"
+                puts @movement
+                @movement = false
+                puts @movement
             end
 
             if input_options == "RIGHT"
@@ -29,7 +31,11 @@ class Player
 
             if input_options == "DOWN"
                 puts "You moved down"
-            end    
+            end 
+            
+            if @spawn_rate ==  true
+                @movement = false
+            end
         end
     end
 end
