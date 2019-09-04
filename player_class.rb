@@ -16,26 +16,26 @@ class Player
 
             if input_options == "LEFT"
                 puts "You moved left"
-                puts @movement
                 @movement = false
-                puts @movement
             end
 
             if input_options == "RIGHT"
                 puts "You moved right"
+                @movement = false
             end
 
             if input_options == "UP"
                 puts "You moved up"
+                @movement = false
             end
 
             if input_options == "DOWN"
                 puts "You moved down"
-            end 
-            
-            if @spawn_rate ==  true
                 @movement = false
-            end
+            end 
+
+            ### need to put invalid input here ###
+            
         end
     end
 end

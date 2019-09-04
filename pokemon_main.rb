@@ -7,16 +7,17 @@ puts "Lets play!"
 pokemon_trainer = Player.new # create the player
 encounter = Pokemon.new # create the pokemon
 
-pokemon_trainer.move # if true # move around until a pokemon is encountered
-encounter.spawn_rate  # at each movement, generate a spawn rate number
-    #  encounter.spawn_rate  #spawn rate is < 30
-if  encounter.found_pokemon # shows pokemon and its level and changes movement to false
-    encounter.throw_run # option to throw a pokball or run
-    encounter.catch_pokemon # generates catch rate and <30 or caught the pokemon or >30 it flees
-elsif
-    encounter.found_no_pokemon # reads spawn rate above 30 and prints no pokemon here
+while pokemon_trainer.movement == true
+    pokemon_trainer.move  # move around area
+    encounter.spawn_rate(pokemon_trainer)  # at each movement, generate a spawn rate number
+        if  pokemon_trainer.movement == false
+            encounter.found_pokemon(pokemon_trainer) # spawn rate <30 - shows pokemon and its level and changes movement to false
+            encounter.throw_run(pokemon_trainer) # option to throw a pokball or run
+            encounter.catch_pokemon(pokemon_trainer) # generates catch rate and <30 or caught the pokemon or >30 it flees
+        elsif
+            encounter.found_no_pokemon(pokemon_trainer) # spawn rate >30 - reads spawn rate above 30 and prints no pokemon here
+        end
 end
-# end 
 
 
 # encounter.found_pokemon # if spawn rate 1-30 / # encounter.found_no_pokemon # if spawn rate 31-100 --- # check to againist found_ pokemon or found_no_pokemon
