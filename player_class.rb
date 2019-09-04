@@ -11,28 +11,32 @@ class Player
         while @movement == true
 
         puts "Where would you like to go?"
-        puts "LEFT, RIGHT, UP or DOWN"
+        puts "'LEFT', 'RIGHT', 'UP', 'DOWN' or 'QUIT'".colorize(:blue)
         input_options = gets.chomp
 
             if input_options == "LEFT"
-                puts "You moved left"
+                puts "You moved left".colorize(:green)
                 @movement = false
             end
 
             if input_options == "RIGHT"
-                puts "You moved right"
+                puts "You moved right".colorize(:green)
                 @movement = false
             end
 
             if input_options == "UP"
-                puts "You moved up"
+                puts "You moved up".colorize(:green)
                 @movement = false
             end
 
             if input_options == "DOWN"
-                puts "You moved down"
+                puts "You moved down".colorize(:green)
                 @movement = false
             end 
+
+            if input_options == "QUIT"
+                system 'clear'
+            end
 
             ### need to put invalid input here ###
             

@@ -1,5 +1,10 @@
+require 'colorize'
+require 'artii'
 require_relative 'player_class'
 require_relative 'pokemon_class'
+
+a = Artii::Base.new
+puts a.asciify("Pokemon").colorize(:blue)
 
 puts "Welcome to Pokemon" # welcome message
 puts "Lets play!"
@@ -20,6 +25,8 @@ while pokemon_trainer.movement == true
             encounter.found_no_pokemon(pokemon_trainer) # spawn rate >30 - reads spawn rate above 30 and prints no pokemon here
         end
 end
+
+
 
 
 # encounter.found_pokemon # if spawn rate 1-30 / # encounter.found_no_pokemon # if spawn rate 31-100 --- # check to againist found_ pokemon or found_no_pokemon

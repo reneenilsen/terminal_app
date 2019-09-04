@@ -25,8 +25,8 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
             puts "You found a pokemon"
             @current_pokemon_type = @pokemon_type.sample(1) # ramdomly choose pokemon type from array
             @current_pokemon_level = @pokemon_level.sample(1) # ramdomly choose pokemon level from array
-            puts "You found a #{@current_pokemon_type}" # prints random pokemon
-            puts "Its level is #{@current_pokemon_level}" # prints ramdom pokemon level
+            puts "You found a #{@current_pokemon_type}".colorize(:green)# prints random pokemon
+            puts "Its level is #{@current_pokemon_level}".colorize(:green) # prints ramdom pokemon level
             pokemon_trainer.movement = false # make movement false so we cant move
         end
     end
@@ -35,16 +35,16 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
     def throw_run(pokemon_trainer)
         if @spawn_rate < 30
             #if we have found a pokemon
-                puts "'THROW' Pokeball or 'RUN'"
+                puts "'THROW' Pokeball or 'RUN'".colorize(:blue)
                 ball_input_options = gets.chomp
     
                 if ball_input_options == "THROW"
-                    puts "You threw a Pokeball"
+                    puts "You threw a Pokeball".colorize(:green)
                 end
     
                 if ball_input_options == "RUN"
                     pokemon_trainer.movement = true
-                    puts "You ran away"
+                    puts "You ran away".colorize(:green)
                 end
 
                 ### need to put invalid input here ###
@@ -54,21 +54,23 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
     def catch_pokemon(pokemon_trainer)
         @catch_rate = rand(1..100) # want to add the pokemons level to this
         puts "catch rate number is #{@catch_rate}" # to be taken out, dont need to see this
+        # @catch_rate = @catch_rate + @current_pokemon_level
+        # puts "catch rate number is #{@catch_rate}" # to be taken out, dont need to see this
 
         if catch_rate < 50 # catch or flee rate is 50/50
-            puts "You caught #{@current_pokemon_type}"
+            puts "You caught #{@current_pokemon_type}".colorize(:green)
             pokemon_trainer.movement = true # return movement to true
         end
 
         if catch_rate > 50
-            puts "The #{@current_pokemon_type} fled"
+            puts "You missed, #{@current_pokemon_type} fled".colorize(:red)
             pokemon_trainer.movement = true # movement to true
         end
     end
 
     def found_no_pokemon(pokemon_trainer)
         if @spawn_rate > 31 # if spawn rate is above 30%, no pokemon appear
-            puts "There is no Pokemon here"
+            puts "There is no Pokemon here".colorize(:red)
             pokemon_trainer.movement = true
             @spawn_rate = rand(1..100) # make new spawn_rate number
             # puts "The new spawn rate number is #{@spawn_rate}" # to be taken out, dont need to see this
