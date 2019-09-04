@@ -13,7 +13,9 @@ while pokemon_trainer.movement == true
         if  pokemon_trainer.movement == false
             encounter.found_pokemon(pokemon_trainer) # spawn rate <30 - shows pokemon and its level and changes movement to false
             encounter.throw_run(pokemon_trainer) # option to throw a pokball or run
-            encounter.catch_pokemon(pokemon_trainer) # generates catch rate and <30 or caught the pokemon or >30 it flees
+                if pokemon_trainer.movement == false
+                    encounter.catch_pokemon(pokemon_trainer) # generates catch rate and <30 or caught the pokemon or >30 it flees
+                end
         elsif
             encounter.found_no_pokemon(pokemon_trainer) # spawn rate >30 - reads spawn rate above 30 and prints no pokemon here
         end

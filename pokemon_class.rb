@@ -43,9 +43,8 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
                 end
     
                 if ball_input_options == "RUN"
-                    puts "You ran away"
                     pokemon_trainer.movement = true
-                    ### need this to break if run is choosen ###
+                    puts "You ran away"
                 end
 
                 ### need to put invalid input here ###
