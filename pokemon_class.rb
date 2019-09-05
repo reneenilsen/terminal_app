@@ -77,13 +77,13 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
 
     def catch_pokemon(pokemon_trainer)
         @catch_rate = rand(1..100).to_i # want to add the pokemons level to this
-        puts "catch rate number is #{@catch_rate}" # to be taken out, dont need to see this
+        puts "catch rate number is #{@catch_rate}".colorize(:yellow) # to be taken out, dont need to see this
         @catch_rate = @catch_rate + @current_pokemon_level
-        puts "pokemon level + catch rate number is #{@catch_rate}" # to be taken out, dont need to see this
+        puts "pokemon level + catch rate number is #{@catch_rate}".colorize(:yellow) # to be taken out, dont need to see this
         @spawn_rate = rand(1..100) # make new spawn_rate number
         if @berry == true
             @catch_rate = @catch_rate - 10
-            puts "pokemon level + catch rate - berry number is #{@catch_rate}"
+            puts "pokemon level + catch rate - berry number is #{@catch_rate}".colorize(:yellow)
         end
 
 

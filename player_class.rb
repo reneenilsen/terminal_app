@@ -42,7 +42,6 @@ class Player
                 puts "Invalid input"
                 @movement = false
             end
-            
         end
     end
 end
