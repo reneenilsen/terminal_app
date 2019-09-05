@@ -17,6 +17,8 @@ class Player
             if input_options == "LEFT"
                 puts "You moved left".colorize(:green)
                 @movement = false
+            else
+                "Invalid input"
             end
 
             if input_options == "RIGHT"
