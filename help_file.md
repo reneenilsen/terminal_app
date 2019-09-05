@@ -1,9 +1,9 @@
 # How to use
 Download and unzip fils
 In terminal
-> install bundler
-> bundle install
-> ruby pokemon_main.rb
+ install bundler
+ bundle install
+ ruby pokemon_main.rb
 
 # Gems used
 artii - for the ascii word art
