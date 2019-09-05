@@ -52,7 +52,7 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
                 if ball_input_options == ""
                     pokemon_trainer.movement = true
                     @catch_rate = 100
-                    puts "Invalid input, you lost the #{@current_pokemon_type}"
+                    puts "Invalid input, you lost the #{@current_pokemon_type}".colorize(:red)
                 end
         end
     end
@@ -64,14 +64,14 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
         berry_input_options = gets.chomp
 
             if berry_input_options == "YES"
-                puts "You gave #{@current_pokemon_type} a berry"
+                puts "You gave #{@current_pokemon_type} a berry".colorize(:green)
             end
             if berry_input_options == "NO"
-                puts "You didn't give #{@current_pokemon_type} a berry"
+                puts "You didn't give #{@current_pokemon_type} a berry".colorize(:red)
                 @berry = false
             end
             if berry_input_options == ""
-                puts "Invalid input, you squashed the berry"
+                puts "Invalid input, you squashed the berry".colorize(:red)
             end
     end
 
