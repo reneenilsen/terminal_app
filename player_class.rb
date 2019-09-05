@@ -10,15 +10,13 @@ class Player
     def move
         while @movement == true
 
-        puts "Where would you like to go?"
-        puts "'LEFT', 'RIGHT', 'UP', 'DOWN' or 'QUIT'".colorize(:blue)
-        input_options = gets.chomp
+            puts "Where would you like to go?"
+            puts "'LEFT', 'RIGHT', 'UP', 'DOWN' or 'QUIT'".colorize(:blue)
+            input_options = gets.chomp
 
-            if input_options == "LEFT"
+            if input_options == "LEFT"# || "left" || "Left" || "l" || "L"
                 puts "You moved left".colorize(:green)
                 @movement = false
-            else
-                "Invalid input"
             end
 
             if input_options == "RIGHT"
@@ -40,7 +38,10 @@ class Player
                 system 'clear'
             end
 
-            ### need to put invalid input here ###
+            if input_options == ""
+                puts "Invalid input"
+                @movement = false
+            end
             
         end
     end

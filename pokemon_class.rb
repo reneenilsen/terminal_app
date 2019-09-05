@@ -37,7 +37,7 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
             #if we have found a pokemon
                 puts "'THROW' Pokeball or 'RUN'".colorize(:blue)
                 ball_input_options = gets.chomp
-    
+
                 if ball_input_options == "THROW"
                     puts "You threw a Pokeball".colorize(:green)
                 end
@@ -48,20 +48,30 @@ attr_accessor :current_pokemon_type, :spawn_rate, :ball_input_options, :catch_ra
                 end
                 @spawn_rate = rand(1..100) # make new spawn_rate number
                 ### need to put invalid input here ###
+
+                if ball_input_options == ""
+                    pokemon_trainer.movement = true
+                    @catch_rate = 100
+                    puts "Invalid input, you lost the #{@current_pokemon_type}"
+                end
         end
     end
 
-    def berry
+    def berry(pokemon_trainer)
         @berry = true
         puts "Would you like to use a berry?"
         puts "YES or NO"
         berry_input_options = gets.chomp
+
             if berry_input_options == "YES"
                 puts "You gave #{@current_pokemon_type} a berry"
             end
             if berry_input_options == "NO"
                 puts "You didn't give #{@current_pokemon_type} a berry"
                 @berry = false
+            end
+            if berry_input_options == ""
+                puts "Invalid input, you squashed the berry"
             end
     end
 
