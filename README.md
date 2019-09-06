@@ -50,7 +50,7 @@ The catch Pokémon is run without user input. The catch rate is calculated and p
 There is also a help file available in the folder containing the application.
 
 # Flow Diagram
-add flow diagram
+![alt text](https://github.com/reneenilsen/terminal_app/blob/master/IMG_20190906_1836261.jpg  "flow chart")
 
 # Implementation Plan
 ![alt text](https://github.com/reneenilsen/terminal_app/blob/master/trello_first_list.bmp "trello board 1")
@@ -64,3 +64,7 @@ ___
 ![alt text](https://github.com/reneenilsen/terminal_app/blob/master/trello3.bmp "trello board 3")
 
 This point I had completed the main code as well as the extra catch things but as I did not understand the language and the way to use the language I did not do alot of testing at the begining of the week. I did not know what needed to be written and therefore tested. I wrote small parts of the class code then wrote into the main code and tested the code to ensure it worked correctly as well as what would happen if I entered something incorrectly (wrong spelling, uppercase/lowercase, symbols). This often drew errors but I feel I have done my best to ensure the code keeps running correctly. I also did my own checking by outputing elements where ramdom numbers and calcualations were running to test whether they were correct. These methods helped me test my code without having a huge knowledge of the way the language works. These prints to terminal will be removed for the final submission but are very useful while building. 
+
+# Timeline of production
+
+![alt text](https://github.com/reneenilsen/terminal_app/blob/master/timeline.png "trello board 3")
