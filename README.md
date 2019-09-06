@@ -8,6 +8,25 @@ The target audience of this adventure game application is young children with a 
 
 A member of the target audience will start the application and be given movement options. Input directs the player and a Pokémon could spawn in the direction the player has moved. If a Pokémon appears the player can throw a Pokeball or run from the encounter. If the player throws a Pokeball the Pokémon can be captured or can flee. If you choose to run from the encounter, successful catch the Pokémon or the Pokémon flees, the player then can continue to move given directions.
 
+# Minimum Requirements
+
+Windows
+Microsoft Windows 10/8/7/Vista/2003/XP (incl.64-bit)
+Ruby 1.8.x or higher, or JRuby
+1 GB RAM minimum
+2 GB RAM recommended
+1024x768 minimum screen resolution
+OS X
+Mac OS X 10.8 or higher
+Ruby 1.8.x or higher, or JRuby
+1 GB RAM minimum
+2 GB RAM recommended
+Linux
+Ruby 1.8.x or higher, or JRuby
+1 GB RAM minimum, 2 GB RAM recommended
+1024x768 minimum screen resolution
+GNOME or KDE desktop
+
 # Features
 ## Movement
 The player is given 4 options for movement, UP, DOWN, LEFT, and RIGHT. The player inputs any of the 4 options and the player moves that direction print to the terminal e.g. “You moved LEFT” for a left movement. The player continues these movements until a Pokémon is encountered. These movements are again used when the player runs from an encounter, successfully catches a Pokémon or the Pokémon flees.
@@ -23,10 +42,12 @@ If the user chooses not to run, they are given the option of a berry. The berry 
 The user for movement is given 4 options when navigating the area. The terminal prints “Where would you like to go” and then “’LEFT’, ‘RIGHT’, ‘UP’ OR ‘DOWN’” the terminal then waits for input. If incorrect input is given terminal says “Invalid input”. Once input is correctly given (’LEFT’, ‘RIGHT’, ‘UP’ OR ‘DOWN’) the terminal displays the direction the user has given through “You move <given direction>”. If a Pokémon is not encountered the 4 options for direction is given again.
 
 ## Encounters
-When a Pokémon is encountered the user is given firstly the option of "'YES' or 'NO'" for giving a berry then 2 more options of “’THROW’ Pokeball or ‘RUN’” the terminal prints this and waits for input of (‘THROW’ or ‘RUN’) to be correctly given else gives “Invalid input”. The terminal the prints either “You threw a Pokeball” or “You ran away”.
+When a Pokémon is encountered the user is given firstly the option of "'YES' or 'NO'" for giving a berry then 2 more options of “’THROW’ Pokeball or ‘RUN’” the terminal prints this and waits for input of (‘THROW’ or ‘RUN’) to be correctly given else gives “Invalid input”. The terminal the prints either “You threw a Pokeball” or “You ran away”. A nil input in the berry stage prints to the user "You squashed the berry" and in the throw/run stage is shown to the user by printing "You lost the Pokemon"
 
 ## Catch Pokémon
 The catch Pokémon is run without user input. The catch rate is calculated and prints to the terminal “You caught <Pokémon name>” if cate rate after the modifers of berry and pokemon level was 50 or lower else if catch rate was above 50 (calculated value plus Pokémon’s level) the terminal prints “The <Pokémon name> fled”. This then returns the user to movement options.
+
+There is also a help file available in the folder containing the application.
 
 # Flow Diagram
 add flow diagram
